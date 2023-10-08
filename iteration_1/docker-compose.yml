@@ -2,7 +2,7 @@ version: '3'
 services:
   master:
     build:
-      context: pythonProject/master
+      context: master
     network_mode: "host"
     container_name: master
 

@@ -19,23 +19,23 @@ def replicate_log():
 
         sec_sleep = 10
 
-        app.logger.info(f"Sleep time for Secondary server - {sec_sleep} sec")
+        app.logger.info(f"Secondary 1 sleep time - {sec_sleep} sec")
         # Introduce a sleep to simulate replication delay
         time.sleep(sec_sleep)
 
         # Append a new message to the replication log
         replicated_logs.append(msg)
-        app.logger.info(f"Received message - '{msg}'")
+        app.logger.info(f"Secondary 1 received message - '{msg}'")
 
         return jsonify({"message": "Log entry replicated successfully"})
     else:
         if not replicated_logs:
-            app.logger.info("No messages received by Secondary server")
+            app.logger.info("No messages received by Secondary 1")
             return jsonify({"message": "No messages received yet"})
         else:
-            app.logger.info(f"ALl messages on Secondary server - {replicated_logs}")
+            app.logger.info(f"ALl messages on Secondary 1 - {replicated_logs}")
             return jsonify({"messages": replicated_logs})
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5002)
+    app.run(host='0.0.0.0', port=5001, debug=False)
