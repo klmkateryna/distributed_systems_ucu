@@ -5,15 +5,21 @@ services:
       context: master
     network_mode: "host"
     container_name: master
+    env_file:
+      - .env
 
   slave1:
     build:
       context: slave_1
     network_mode: "host"
     container_name: slave_1
+    env_file:
+      - .env
 
   slave2:
     build:
       context: slave_2
     network_mode: "host"
     container_name: slave_2
+    env_file:
+      - .env

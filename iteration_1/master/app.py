@@ -45,7 +45,7 @@ def add_log():
 
             if secondaries and acks == len(secondaries):
                 messages.append(msg)
-                app.logger.info(f"Master's POST request finished")
+                app.logger.info("Master's POST request finished")
                 return jsonify({"message": "New message added and replicated successfully"})
             else:
                 app.logger.info(f"Message - '{msg}' - failed to replicate")
