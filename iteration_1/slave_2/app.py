@@ -38,4 +38,4 @@ def replicate_log():
 
 
 if __name__ == '__main__':
-    app.run(host=os.getenv('HOST_SLAVE_2'), port=int(os.getenv('PORT_SLAVE_2')), debug=False)
+    app.run(host=os.getenv('HOST_SLAVE_2'), port=int(os.getenv('PORT_SLAVE_2')))

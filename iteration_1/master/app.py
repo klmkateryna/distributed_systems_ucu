@@ -53,7 +53,6 @@ def add_log():
         except KeyError as e:
             app.logger.info(f"Error - {e}. Please set 'entry' key to JSON file")
             return jsonify({"message": "Please set 'entry' key to JSON file"})
-
     else:
         app.logger.info("Missing JSON in request")
         return jsonify({"message": "Missing JSON in request"})
@@ -82,4 +81,4 @@ def get_log():
 
 
 if __name__ == '__main__':
-    app.run(host=os.getenv('HOST_MASTER'), port=int(os.getenv('PORT_MASTER')), debug=False)
+    app.run(host=os.getenv('HOST_MASTER'), port=int(os.getenv('PORT_MASTER')))
