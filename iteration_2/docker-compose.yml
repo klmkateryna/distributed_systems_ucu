@@ -4,22 +4,27 @@ services:
     build:
       context: master
     network_mode: "host"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=5003
     container_name: master
-    env_file:
-      - .env
 
   slave1:
     build:
-      context: slave_1
+      context: slave
     network_mode: "host"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=5001
+      - TIME_SLEEP_IN_SEC=10
     container_name: slave_1
-    env_file:
-      - .env
 
   slave2:
     build:
-      context: slave_2
+      context: slave
     network_mode: "host"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=5002
+      - TIME_SLEEP_IN_SEC=30
     container_name: slave_2
-    env_file:
-      - .env

@@ -20,19 +20,7 @@ w value specifies how many ACKs the master should receive from secondaries befor
 
 ### Project structure
  - `master/` - folder for Master node;
- - `slave_1/` - folder for Secondary 1 node;
- - `slave_2/` - folder for Secondary 2 node;
- - `.env` - file with environment variables. Example:
-```
-HOST_MASTER =
-PORT_MASTER =
-HOST_SLAVE_1 = 
-PORT_SLAVE_1 = 
-TIME_SLEEP_IN_SEC_SLAVE_1 = 
-HOST_SLAVE_2 =
-PORT_SLAVE_2 =
-TIME_SLEEP_IN_SEC_SLAVE_2 =
-```
+ - `slave/` - folder for Secondary node;
 
 ### Required structure for JSON file
 `{'entry':'message_1'}`
@@ -44,7 +32,7 @@ TIME_SLEEP_IN_SEC_SLAVE_2 =
 `request.get('{HOST_MASTER}:{PORT_MASTER}/get-message')`
 
 ### Example of GET request from Secondary server using Python
-`request.get('{HOST_SLAVE_1}:{PORT_SLAVE_1}/replicate-log')`
+`request.get('{HOST_SLAVE}:{PORT_SLAVE}/replicate-log')`
 
 
 ### Run command
